@@ -18,6 +18,7 @@ module JsonApi
     def initialize(main_ability)
       @main_ability = main_ability
 
+      # Person ContactAccounts
       # allow reading public contacts of people on which the user has :show permission
       can :read, CONTACT_ACCOUNT_MODELS,
           public: true,
@@ -36,7 +37,9 @@ module JsonApi
       can :destroy, CONTACT_ACCOUNT_MODELS,
           contactable: details_writable_people(main_ability)
 
-      # TODO: implement rules for Group contactables (and any other existing contactable classes)
+      # Group ContactAccounts
+      can :read, CONTACT_ACCOUNT_MODELS,
+          contactable_type: Group.sti_name if main_ability.user&.roles&.present? || main_ability.user&.admin?
     end
 
     private
