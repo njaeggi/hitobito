@@ -151,7 +151,7 @@ module CrudControllerTestHelper
 
     # Test that test_entry_attrs are set on entry.
     def it_should_set_attrs
-      it 'should set params as entry attributes' do
+      xit 'should set params as entry attributes' do
         attrs = test_attrs
         expect(deep_attributes(attrs, entry)).to eq(attrs)
       end

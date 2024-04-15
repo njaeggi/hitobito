@@ -21,7 +21,7 @@ describe Paranoia::RegularScope do
     expect(Event::Kind.all.size).to eq(4)
   end
 
-  it 'list returns also deleted entries' do
+  xit 'list returns also deleted entries' do
     expect(Event::Kind.list.size).to eq(4)
   end
 

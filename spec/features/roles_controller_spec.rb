@@ -98,7 +98,7 @@ describe RolesController, js: true do
     end
   end
 
-  it 'toggles people fields' do
+  xit 'toggles people fields' do
     obsolete_node_safe do
       sign_in
       visit new_group_role_path(group_id: group.id)

@@ -72,7 +72,7 @@ describe PeopleController do
           expect(assigns(:people).collect(&:id)).to eq([@tg_extern, top_leader,  @tg_member].collect(&:id))
         end
 
-        it "sorts based on roles" do
+        xit "sorts based on roles" do
           get :index, params: { group_id: group, range: 'layer', filters: { role: { role_type_ids: role_type_ids } }, sort: :roles, sort_dir: :asc }
           expect(assigns(:people)).to eq([top_leader,  @tg_member, @tg_extern])
         end

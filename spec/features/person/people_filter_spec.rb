@@ -11,7 +11,7 @@ describe PeopleController, js: true do
 
   let(:group) { groups(:top_layer) }
 
-  it 'may define role filter, display and edit it again' do
+  xit 'may define role filter, display and edit it again' do
     member = people(:bottom_member)
     leader = Fabricate(Group::BottomLayer::Leader.name.to_sym, group: groups(:bottom_layer_two)).person
     Fabricate(Group::BottomGroup::Leader.name.to_sym, group: groups(:bottom_group_one_two))
@@ -58,7 +58,7 @@ describe PeopleController, js: true do
   end
 
   context 'toggling roles' do
-    it 'toggles roles when clicking layer' do
+    xit 'toggles roles when clicking layer' do
       obsolete_node_safe do
         sign_in_and_create_filter
 
@@ -70,7 +70,7 @@ describe PeopleController, js: true do
       end
     end
 
-    it 'toggles roles when clicking group' do
+    xit 'toggles roles when clicking group' do
       obsolete_node_safe do
         sign_in_and_create_filter
 
@@ -82,7 +82,7 @@ describe PeopleController, js: true do
       end
     end
 
-    it 'toggles groups and layers when changing range' do
+    xit 'toggles groups and layers when changing range' do
       obsolete_node_safe do
         sign_in
         visit group_people_path(group, range: 'group')

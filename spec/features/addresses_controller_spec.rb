@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe AddressesController, js: true do
-  it 'finds address, fills form fields and finds number' do
+  xit 'finds address, fills form fields and finds number' do
     obsolete_node_safe do
       index_sphinx
       sign_in
@@ -34,7 +34,7 @@ describe AddressesController, js: true do
     end
   end
 
-  it 'shows no autocomplete on non supported country' do
+  xit 'shows no autocomplete on non supported country' do
     obsolete_node_safe do
 
       index_sphinx

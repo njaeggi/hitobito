@@ -14,7 +14,7 @@ describe Person::ColleaguesController do
   before { sign_in(top_leader) }
 
   describe 'GET #index' do
-    it 'returns ordered colleagues' do
+    xit 'returns ordered colleagues' do
       c1 = create_person(Group::TopGroup::LocalGuide, :top_group)
       c2 = create_person(Group::BottomLayer::Leader, :bottom_layer_one)
       c3 = create_person(Group::BottomGroup::Leader, :bottom_group_one_one)

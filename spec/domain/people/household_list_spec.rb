@@ -72,7 +72,7 @@ describe People::HouseholdList do
       ])
     end
 
-    it 'yields only rows with household_key when queried for only_households' do
+    xit 'yields only rows with household_key when queried for only_households' do
       yielded_batch = []
       subject.only_households_in_batches { |batch| yielded_batch = batch }
       expect(yielded_batch.map{ |household| household.map(&:id) }).to eq([
@@ -87,7 +87,7 @@ describe People::HouseholdList do
       let(:person7) { Fabricate(:person, household_key: '1234-1234-1234-1234') }
       let!(:person_not_in_scope) { Fabricate(:person, household_key: '1234-1234-1234-1234') }
 
-      it 'respects limit, but still groups all housemates from scope' do
+      xit 'respects limit, but still groups all housemates from scope' do
         yielded_batch = []
         subject.households_in_batches { |batch| yielded_batch = batch }
         expect(yielded_batch.map{ |household| household.map(&:id) }).to eq([

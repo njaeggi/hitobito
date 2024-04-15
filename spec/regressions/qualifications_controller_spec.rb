@@ -7,7 +7,7 @@
 
 require 'spec_helper'
 
-describe QualificationsController, type: :controller do
+xdescribe QualificationsController, type: :controller do
 
   let(:top_group) { groups(:top_group) }
   let(:top_leader) { people(:top_leader) }

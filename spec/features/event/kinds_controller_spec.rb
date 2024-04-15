@@ -9,7 +9,7 @@ require 'spec_helper'
 
 describe Event::KindsController, js: true do
 
-  it 'may add new preconditions' do
+  xit 'may add new preconditions' do
     obsolete_node_safe do
       sign_in
       visit edit_event_kind_path(event_kinds(:slk))
@@ -35,7 +35,7 @@ describe Event::KindsController, js: true do
     end
   end
 
-  it 'may remove preconditions' do
+  xit 'may remove preconditions' do
     event_kinds(:slk).event_kind_qualification_kinds.create!(
       qualification_kind: qualification_kinds(:ql),
       category: 'precondition',

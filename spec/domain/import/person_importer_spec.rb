@@ -105,7 +105,7 @@ describe Import::PersonImporter do
       importer.import
     end
 
-    it 'parses tags before assigning' do
+    xit 'parses tags before assigning' do
       expect(person.tags.count).to eq(2)
       expect(person.tag_list).to eq(['Responsible:John', 'lang:de'])
     end

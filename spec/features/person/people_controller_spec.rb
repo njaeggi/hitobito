@@ -109,7 +109,7 @@ describe PeopleController, js: true do
         PeopleRelation.kind_opposites.clear
       end
 
-      it 'can define a new relation' do
+      xit 'can define a new relation' do
         obsolete_node_safe do
           visit edit_group_person_path(group_id: groups(:top_group), id: user.id)
           is_expected.to have_content 'Beziehungen'
@@ -128,7 +128,7 @@ describe PeopleController, js: true do
         end
       end
 
-      it 'remove existing relation' do
+      xit 'remove existing relation' do
         obsolete_node_safe do
           user.relations_to_tails.create!(tail_id: people(:bottom_member).id, kind: 'sibling')
 

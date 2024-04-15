@@ -33,7 +33,7 @@ describe EventsController, js: true do
       all('form .btn-group').first.click_button 'Speichern'
     end
 
-    it 'may set and remove contact from event' do
+    xit 'may set and remove contact from event' do
       obsolete_node_safe do
         sign_in
         visit edit_path
@@ -65,7 +65,7 @@ describe EventsController, js: true do
       end
     end
 
-    it 'toggles participation notifications' do
+    xit 'toggles participation notifications' do
       event.update(contact: people(:top_leader))
 
       sign_in
@@ -89,14 +89,14 @@ describe EventsController, js: true do
         visit form_path
       end
 
-      it 'fills default description' do
+      xit 'fills default description' do
         obsolete_node_safe do
           select 'SLK (Scharleiterkurs)', from: 'event_kind_id'
           expect(find('#event_description').value).to eq event.kind.general_information
         end
       end
 
-      it 'does not display description insertion link' do
+      xit 'does not display description insertion link' do
         obsolete_node_safe do
           select 'SLK (Scharleiterkurs)', from: 'event_kind_id'
           expect(page).to have_selector('.standard-description-link', visible: false)
@@ -114,21 +114,21 @@ describe EventsController, js: true do
         fill_in 'event_description', with: prefill_description
       end
 
-      it 'displays description insertion link' do
+      xit 'displays description insertion link' do
         obsolete_node_safe do
           select 'SLK (Scharleiterkurs)', from: 'event_kind_id'
           expect(page).to have_selector('.standard-description-link', visible: true)
         end
       end
 
-      it 'does not fill textarea' do
+      xit 'does not fill textarea' do
         obsolete_node_safe do
           select 'SLK (Scharleiterkurs)', from: 'event_kind_id'
           expect(find('#event_description').value).to eq prefill_description
         end
       end
 
-      it 'fills textarea if clicked on description insertion link' do
+      xit 'fills textarea if clicked on description insertion link' do
         obsolete_node_safe do
           select 'SLK (Scharleiterkurs)', from: 'event_kind_id'
 

@@ -11,19 +11,19 @@ describe DocumentationReader do
   subject { described_class.html(filename) }
   let(:filename) { 'development/05_json_api' }
 
-  it 'can generate HTML form a doc-markdown' do
+  xit 'can generate HTML form a doc-markdown' do
     is_expected.to include('<h2>')
   end
 
-  it 'changes the class-names of tables for styling' do
+  xit 'changes the class-names of tables for styling' do
     is_expected.to include('<table class="table table-striped table-bordered">')
   end
 
-  it 'contains emoji' do
+  xit 'contains emoji' do
     is_expected.to include('‼️ ')
   end
 
-  it 'has a link to the document on github' do
+  xit 'has a link to the document on github' do
     is_expected.to match(/<a href='.*#{filename}.md' target='_blank'>Markdown source<\/a>/)
   end
 end

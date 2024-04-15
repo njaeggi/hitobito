@@ -174,8 +174,7 @@ GEM
     codez-tarantula (0.5.5)
       hpricot (~> 0.8.4)
       htmlentities (~> 4.3.0)
-    commonmarker (1.0.4)
-      rb_sys (~> 0.9)
+    commonmarker (0.23.10)
     concurrent-ruby (1.2.3)
     config (5.3.0)
       deep_merge (~> 1.2, >= 1.2.1)
@@ -440,9 +439,8 @@ GEM
       hashery (~> 2.0)
       ruby-rc4
       ttfunk
-    phonelib (0.8.7)
     pg (1.5.4)
-    phonelib (0.8.4)
+    phonelib (0.8.7)
     prawn (2.4.0)
       pdf-core (~> 0.9.0)
       ttfunk (~> 1.7)
@@ -535,7 +533,6 @@ GEM
     rb-fsevent (0.11.2)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    rb_sys (0.9.90)
     rbtree (0.4.6)
     rbtree3 (0.7.1)
     redcarpet (3.6.0)
@@ -788,7 +785,6 @@ DEPENDENCIES
   haml
   headless
   hirb
-  hitobito_generic!
   http_accept_language
   icalendar
   image_processing (~> 1.12)
@@ -813,7 +809,7 @@ DEPENDENCIES
   paranoia
   pdf-inspector
   pg
-  phonelib
+  phonelib (= 0.8.7)
   prawn
   prawn-markup
   prawn-table
@@ -874,4 +870,4 @@ DEPENDENCIES
   wirble
 
 BUNDLED WITH
-   2.5.6
+   2.4.19

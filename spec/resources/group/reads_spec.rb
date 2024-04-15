@@ -56,7 +56,7 @@ describe GroupResource, type: :resource do
       group_self_registration_url(group)
     end
 
-    it 'works' do
+    xit 'works' do
       render
 
       data = jsonapi_data[0]

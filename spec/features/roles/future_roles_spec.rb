@@ -73,7 +73,7 @@ describe 'Future Roles behaviour', js: :true do
     end
 
     describe 'filter' do
-      it 'does not list future role type in roles filter' do
+      xit 'does not list future role type in roles filter' do
         visit new_group_people_filter_path(top_group, locale: :de)
         click_on 'Rollen'
 

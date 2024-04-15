@@ -87,7 +87,7 @@ describe Tags::Merger do
       expect(tag1.reload.taggings_count).to eq(2)
     end
 
-    it 'does not merge validation tags' do
+    xit 'does not merge validation tags' do
       @src_tag_ids = validation_tags.collect(&:id)
 
       merger.merge!

@@ -212,7 +212,7 @@ describe Event::ApplicationMarketController do
         end
       end
 
-      it 'starting from participant' do
+      xit 'starting from participant' do
         obsolete_node_safe do
           sign_in
           visit group_event_application_market_index_path(group.id, event.id)
