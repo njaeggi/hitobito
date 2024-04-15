@@ -92,6 +92,9 @@ class Person < ActiveRecord::Base # rubocop:disable Metrics/ClassLength
     :gender, [:years, :integer], :birthday
   ]
 
+  SEARCH_ATTRS = {first_name: 'A', last_name: 'A', company_name: 'A', nickname: 'A', email: 'B', address: 'B', zip_code: 'B', town: 'B', country: 'B', birthday: 'B', additional_information: 'B'}
+  ASSOCIATED_SEARCH_ATTRS = {phone_numbers: {number: 'B'}, social_accounts: {name: 'B'}, additional_emails: {email: 'B'}}
+
   GENDERS = %w(m w).freeze
 
   LANGUAGES = Settings.application
@@ -125,6 +128,7 @@ class Person < ActiveRecord::Base # rubocop:disable Metrics/ClassLength
   include TwoFactorAuthenticatable
   include PersonTags::ValidationTagged
   include People::SelfRegistrationReasons
+  include PgSearch::Model
 
   i18n_enum :gender, GENDERS
   i18n_setter :gender, (GENDERS + [nil])
@@ -263,6 +267,13 @@ class Person < ActiveRecord::Base # rubocop:disable Metrics/ClassLength
             '(company_name IS NOT NULL AND company_name <> \'\')')
   }
   scope :with_mobile, -> { joins(:phone_numbers).where(phone_numbers: { label: 'Mobil' }) }
+
+  pg_search_scope :search,
+    against: SEARCH_ATTRS,
+    associated_against: ASSOCIATED_SEARCH_ATTRS,
+    using: {
+      tsearch: { prefix: true }
+    } 
 
   ### CLASS METHODS
 

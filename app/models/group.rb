@@ -42,6 +42,10 @@
 #
 
 class Group < ActiveRecord::Base # rubocop:disable Metrics/ClassLength
+
+  SEARCH_ATTRS = {name: 'A', short_name: 'B', email: 'B', address: 'B', zip_code: 'B', town: 'B', country: 'B'}
+  ASSOCIATED_SEARCH_ATTRS = {parent: {name: 'B', short_name: 'B'}, phone_numbers: {number: 'B'}, social_accounts: {name: 'B'}, additional_emails: {email: 'B'}}
+
   include Group::NestedSet
   include Group::Types
   include Contactable
@@ -50,6 +54,7 @@ class Group < ActiveRecord::Base # rubocop:disable Metrics/ClassLength
   include MountedAttr
   include Encryptable
   include I18nEnums
+  include PgSearch::Model
 
   PROVIDER_VALUES = %w(aspsms).freeze
   ADDRESS_POSITION_VALUES = %w(left right).freeze
@@ -166,6 +171,13 @@ class Group < ActiveRecord::Base # rubocop:disable Metrics/ClassLength
                    content_type: ['image/jpeg', 'image/gif', 'image/png']
 
   scope :without_archived, -> { where(archived_at: nil) }
+
+  pg_search_scope :search,
+    against: SEARCH_ATTRS,
+    associated_against: ASSOCIATED_SEARCH_ATTRS,
+    using: {
+      tsearch: { prefix: true }
+    } 
 
   ### CLASS METHODS
 
