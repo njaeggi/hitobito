@@ -441,6 +441,10 @@ GEM
       hashery (~> 2.0)
       ruby-rc4
       ttfunk
+    pg (1.5.4)
+    pg_search (2.3.6)
+      activerecord (>= 5.2)
+      activesupport (>= 5.2)
     phonelib (0.8.7)
     pg (1.5.4)
     phonelib (0.8.4)
@@ -814,6 +818,7 @@ DEPENDENCIES
   paranoia
   pdf-inspector
   pg
+  pg_search
   phonelib
   prawn
   prawn-markup
