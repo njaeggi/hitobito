@@ -15,6 +15,17 @@ class FullTextController < ApplicationController
   respond_to :html
 
   def index
+    respond_to do |format|
+      format.html { query_results }
+      format.json do
+        render json: query_json_results || []
+      end
+    end    
+  end
+
+  private
+
+  def query_results
     @people = with_query { search_strategy.list_people }
     @groups = with_query { search_strategy.query_groups }
     @events = with_query { decorate_events(search_strategy.query_events) }
@@ -22,16 +33,14 @@ class FullTextController < ApplicationController
     @active_tab = active_tab
   end
 
-  def query
+  def query_json_results
     people = search_strategy.query_people.collect { |i| PersonDecorator.new(i).as_quicksearch }
     groups = search_strategy.query_groups.collect { |i| GroupDecorator.new(i).as_quicksearch }
     events = search_strategy.query_events.collect { |i| EventDecorator.new(i).as_quicksearch }
     invoices = search_strategy.query_invoices.collect { |i| InvoiceDecorator.new(i).as_quicksearch }
 
-    render json: results_with_separator(people, groups, events, invoices) || []
-  end
-
-  private
+    results_with_separator(people, groups, events, invoices)
+  end  
 
   def results_with_separator(*sets)
     sets.select(&:present?).inject do |memo, set|
