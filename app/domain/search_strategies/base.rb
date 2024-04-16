@@ -8,6 +8,8 @@
 module SearchStrategies
   class Base
 
+    MIN_TERM_LENGTH = 3
+
     QUERY_PER_PAGE = 10
 
     attr_accessor :term
@@ -59,6 +61,10 @@ module SearchStrategies
     end
 
     protected
+
+    def term_present?
+      @term.present? && @term.length >= MIN_TERM_LENGTH
+    end
 
     def fetch_people(_ids)
       # override

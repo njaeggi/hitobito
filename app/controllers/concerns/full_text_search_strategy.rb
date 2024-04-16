@@ -23,7 +23,7 @@ module FullTextSearchStrategy
     if sphinx?
       SearchStrategies::Sphinx
     else
-      SearchStrategies::Sql
+      SearchStrategies::Pg
     end
   end
 
