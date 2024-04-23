@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-#  Copyright (c) 2012-2023, Jungwacht Blauring Schweiz. This file is part of
+#  Copyright (c) 2012-2024, Jungwacht Blauring Schweiz. This file is part of
 #  hitobito and licensed under the Affero General Public License version 3
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito.
@@ -322,7 +322,6 @@ Hitobito::Application.routes.draw do
     get 'list_events' => 'event/lists#events', as: :list_events
 
     get 'full' => 'full_text#index'
-    get 'query' => 'full_text#query'
 
     resources :event_kinds, module: 'event', controller: 'kinds'
     resources :event_kind_categories, module: 'event', controller: 'kind_categories'

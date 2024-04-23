@@ -1,4 +1,4 @@
--#  Copyright (c) 2012-2014, insieme Schweiz. This file is part of
+-#  Copyright (c) 2012-2024, insieme Schweiz. This file is part of
 -#  hitobito and licensed under the Affero General Public License version 3
 -#  or later. See the COPYING file at the top-level directory or at
 -#  https://github.com/hitobito/hitobito.
@@ -9,7 +9,7 @@
                        class: 'quicksearch-input form-control form-control-sm',
                        id: 'quicksearch',
                        placeholder: t('global.search.placeholder'),
-                       data: { url: query_path,
+                       data: { url: full_path,
                                person_url: person_path(1).gsub(/\/1$/, ''),
                                group_url: groups_path,
                                event_url: event_path(1).gsub(/\/1$/, ''),

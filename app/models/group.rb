@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-#  Copyright (c) 2012-2023, Jungwacht Blauring Schweiz. This file is part of
+#  Copyright (c) 2012-2024, Jungwacht Blauring Schweiz. This file is part of
 #  hitobito and licensed under the Affero General Public License version 3
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito.
@@ -55,6 +55,13 @@
 #
 
 class Group < ActiveRecord::Base # rubocop:disable Metrics/ClassLength
+
+  SEARCH_ATTRS = [:name, :short_name, :email, :address, :zip_code, :town, :country]
+  ASSOCIATED_SEARCH_ATTRS = {
+                            parent: [:name, :short_name], phone_numbers: [:number], 
+                            social_accounts: [:name], additional_emails: [:email]
+                          }
+
   include Group::NestedSet
   include Group::Types
   include Contactable
@@ -63,7 +70,8 @@ class Group < ActiveRecord::Base # rubocop:disable Metrics/ClassLength
   include MountedAttr
   include Encryptable
   include I18nEnums
-
+  include PgSearchable
+  
   PROVIDER_VALUES = %w(aspsms).freeze
   ADDRESS_POSITION_VALUES = %w(left right).freeze
 

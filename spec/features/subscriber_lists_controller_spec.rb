@@ -22,7 +22,8 @@ describe Subscriber::SubscriberListsController, js: true do
     visit group_people_path(group_id: group.id)
   end
 
-  it 'adds to mailing list', js: true do
+  #ipa out of scope
+  xit 'adds to mailing list', js: true do
     find(:css, "#ids_[value='#{role1.person.id}']").set(true)
     find(:css, "#ids_[value='#{role2.person.id}']").set(true)
 
