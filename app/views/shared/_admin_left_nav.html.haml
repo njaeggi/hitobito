@@ -36,6 +36,7 @@
     = nav t('mailing_lists.imap_mails.manage'), imap_mails_path(mailbox: 'inbox'), %w(mailing_lists/imap_mails)
   - if can?(:index, HitobitoLogEntry)
     = nav t('hitobito_log_entries.index.title'), hitobito_log_entries_path
+  = nav HitobitoTheme.model_name.human(count: 2), hitobito_themes_path, %w(hitobito_themes)
 
   = render_extensions(:admin_nav_kinds)
 
