@@ -53,6 +53,7 @@ module NavigationHelper
        tags
        hitobito_log_entries
        mailing_lists/imap_mails
+       hitobito_themes
        api],
      if: ->(_) { can?(:index, LabelFormat) }}
   ]
