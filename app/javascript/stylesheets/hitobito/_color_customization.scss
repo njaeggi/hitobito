@@ -1,0 +1,37 @@
+.btn-primary {
+    background-color: var(--hitobito-primary-color);
+}
+
+.btn-outline-primary {
+    color: var(--hitobito-primary-color);
+    border-color: var(--hitobito-primary-color);
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: var(--hitobito-primary-color);
+        color: $white;
+        border-color: var(--hitobito-primary-color);
+    }
+}
+
+.btn-outline-secondary {
+    color: var(--hitobito-secondary-color);
+    border-color: var(--hitobito-secondary-color);
+}
+
+body {
+    background: var(--hitobito-body-background);
+}
+
+#page {
+    background: var(--hitobito-page-background);
+}
+
+#page-footer {
+    background-color: var(--hitobito-footer-background);
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--hitobito-primary-color);
+}

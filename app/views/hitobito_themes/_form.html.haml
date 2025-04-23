@@ -6,4 +6,10 @@
 
 = entry_form(buttons_bottom: false) do |f|
   = f.labeled_input_field :name
-  = f.labeled_color_field :color, class: "form-control form-control-sm w-25"
+  = f.labeled_color_field :link_color, class: "form-control form-control-sm w-25"
+  = f.labeled_color_field :link_hover_color, class: "form-control form-control-sm w-25"
+  = f.labeled_color_field :primary_color, class: "form-control form-control-sm w-25"
+  = f.labeled_color_field :secondary_color, class: "form-control form-control-sm w-25"
+  = f.labeled_color_field :page_background_color, class: "form-control form-control-sm w-25"
+  = f.labeled_color_field :content_background_color, class: "form-control form-control-sm w-25"
+  = f.labeled_color_field :footer_background_color, class: "form-control form-control-sm w-25"

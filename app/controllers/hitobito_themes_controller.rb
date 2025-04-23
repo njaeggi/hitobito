@@ -6,5 +6,5 @@
 #  https://github.com/hitobito/hitobito.
 
 class HitobitoThemesController < SimpleCrudController
-  self.permitted_attrs = [:name, :color]
+  self.permitted_attrs = [:name, :link_color, :link_hover_color, :primary_color, :secondary_color, :page_background_color, :content_background_color, :footer_background_color]
 end

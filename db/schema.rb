@@ -10,13 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_12_09_093414) do
+ActiveRecord::Schema[7.0].define(version: 2025_01_06_144214) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  # Please do not delete this, the SQL schema does not know about this
-  # but the application and this schema needs it
-  execute "CREATE COLLATION IF NOT EXISTS case_insensitive_emails (provider = icu, deterministic = false, locale = 'und-u-ka-noignore-ks-level2');"
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -501,6 +497,17 @@ ActiveRecord::Schema.define(version: 2024_12_09_093414) do
     t.index ["subject_type", "subject_id"], name: "index_hitobito_log_entries_on_subject"
   end
 
+  create_table "hitobito_themes", force: :cascade do |t|
+    t.string "name"
+    t.string "link_color"
+    t.string "link_hover_color"
+    t.string "primary_color"
+    t.string "secondary_color"
+    t.string "page_background_color"
+    t.string "content_background_color"
+    t.string "footer_background_color"
+  end
+
   create_table "invoice_articles", id: :serial, force: :cascade do |t|
     t.string "number"
     t.string "name", null: false
@@ -706,8 +713,8 @@ ActiveRecord::Schema.define(version: 2024_12_09_093414) do
     t.bigint "templated_id"
     t.string "title", null: false
     t.text "body"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["templated_type", "templated_id"], name: "index_message_templates_on_templated"
   end
 
@@ -905,8 +912,8 @@ ActiveRecord::Schema.define(version: 2024_12_09_093414) do
     t.string "unlock_token"
     t.string "family_key"
     t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
+    t.datetime "confirmed_at", precision: nil
+    t.datetime "confirmation_sent_at", precision: nil
     t.string "unconfirmed_email", collation: "case_insensitive_emails"
     t.string "reset_password_sent_to"
     t.integer "two_factor_authentication"
@@ -1040,9 +1047,9 @@ ActiveRecord::Schema.define(version: 2024_12_09_093414) do
     t.integer "group_id", null: false
     t.string "type", null: false
     t.string "label"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.datetime "archived_at"
+    t.datetime "created_at", precision: nil
+    t.datetime "updated_at", precision: nil
+    t.datetime "archived_at", precision: nil
     t.boolean "terminated", default: false, null: false
     t.date "start_on"
     t.date "end_on"

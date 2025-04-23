@@ -284,6 +284,9 @@ de:
       hitobito_log_entry:
         one: Hitobito Log Eintrag
         other: Hitobito Log Einträge
+      hitobito_theme:
+        one: Hitobito Farbschema
+        other: Hitobito Farbschemas
       invoice:
         one: Rechnung
         other: Rechnungen
@@ -1004,6 +1007,14 @@ de:
         category: Kategorie
         subject: Subjekt
         message: Meldung
+
+      hitobito_theme:
+        name: Name
+        link_color: Link Farbe
+        link_hover_color: Link Hover Farbe
+        link_color: Button Farbe
+        button_hover_color: Button Hover Farbe
+
 
       label_format:
         name: Bezeichnung

@@ -32,10 +32,10 @@
     }
   }
   & > .active > a {
-    border-color: $blue;
+    border-color: var(--hitobito-primary-color);
   }
   & > .active > a:hover {
-    border-color: $purple;
+    border-color: var(--bs-link-hover-color);
   }
 }
 

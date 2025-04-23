@@ -9,7 +9,6 @@
 body {
   padding: 0;
   height: 100vh;
-  background: $body-background;
 }
 
 /* Header */
@@ -63,7 +62,6 @@ body {
   }
   margin: 0;
   width: 100%;
-  background: $page-background;
   overflow-y: visible;
 
   display: flex;
@@ -213,7 +211,6 @@ body {
 #page-footer {
   padding-top: 0;
   color: $footer-color;
-  background-color: $footer-background;
 
   a[data-toggle="collapse"] {
     margin-top: -1px;

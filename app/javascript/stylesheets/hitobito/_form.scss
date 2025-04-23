@@ -17,7 +17,6 @@
   &:focus,
   &:active {
     color: $white;
-    background: $purple;
     text-shadow: 0 -1px 1px false $purple-dark;
     border-color: $purple-dark;
 
@@ -66,9 +65,13 @@
 
 .btn-primary {
   color: $white;
-  background: $blue;
-  border-color: $blue;
-  text-shadow: 0 -1px 1px false $blue-dark;
+  background: var(--hitobito-btn-color);
+  border-color: var(--hitobito-btn-color);
+  text-shadow: 0 -1px 1px false var(--hitobito-btn-color);
+}
+
+.btn-outline-secondary {
+  border-color: var(--hitobito-btn-color);
 }
 
 .btn-group.open .btn.dropdown-toggle {

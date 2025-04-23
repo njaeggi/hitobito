@@ -366,7 +366,7 @@ Hitobito::Application.routes.draw do
 
     resources :self_registration_reasons
 
-    resources :hitobito_themes, only: [:index, :edit, :update]
+    resources :hitobito_themes
     get '/theme-settings.css', to: 'themes#stylesheet'
 
     resources :custom_contents, only: [:index, :edit, :update]
